@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const fetchUserData = async (token) => {
     try {
-      const response = await axios.get('http://localhost:5000/users/getData', {
+      const response = await axios.get('https://blog-backend-pgsc.onrender.com/users/getData', {
         headers: {
           auth: token
         }

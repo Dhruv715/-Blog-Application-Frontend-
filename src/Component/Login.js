@@ -45,7 +45,7 @@ function Login() {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/users/login', formData);
+      const response = await axios.post('https://blog-backend-pgsc.onrender.com/users/login', formData);
       const { status, message, token } = response.data;
       
       if (status === 'Success') {

@@ -11,7 +11,7 @@ const DummyBlogList = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/blog/AllBlog');
+        const response = await axios.get('https://blog-backend-pgsc.onrender.com/blog/AllBlog');
         setBlogs(response.data);
       } catch (error) {
         console.error('Error fetching blogs:', error);
@@ -30,7 +30,7 @@ const DummyBlogList = () => {
 
   const fetchUserData = async (token) => {
     try {
-      const response = await axios.get('http://localhost:5000/users/getData', {
+      const response = await axios.get('https://blog-backend-pgsc.onrender.com/users/getData', {
         headers: {
           auth: token,
         },
@@ -49,7 +49,7 @@ const DummyBlogList = () => {
         return;
       }
 
-      const response = await axios.post(`http://localhost:5000/blog/LikeBlog/${blogId}`, null, {
+      const response = await axios.post(`https://blog-backend-pgsc.onrender.com/blog/LikeBlog/${blogId}`, null, {
         headers: {
           auth: token,
         },
@@ -77,7 +77,7 @@ const DummyBlogList = () => {
       }
 
       const response = await axios.post(
-        `http://localhost:5000/blog/Comment/${blogId}`,
+        `https://blog-backend-pgsc.onrender.com/blog/Comment/${blogId}`,
         { content: commentInput },
         {
           headers: {
@@ -103,7 +103,7 @@ const DummyBlogList = () => {
   };
 
   const shareOnPlatform = (platform, blogId) => {
-    const blogUrl = `${window.location.origin}/blog/${blogId}`; // Replace with actual blog URL
+    const blogUrl = `${window.location.origin}/blog/${blogId}`; 
     switch (platform) {
       case 'WhatsApp':
         window.open(`whatsapp://send?text=${encodeURIComponent(blogUrl)}`, '_blank');

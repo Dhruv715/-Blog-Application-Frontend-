@@ -51,7 +51,7 @@ function Signup() {
     setLoading(true);
 
     try {
-      await axios.post('http://localhost:5000/users/signup', formData);
+      await axios.post('https://blog-backend-pgsc.onrender.com/users/signup', formData);
       navigate('/login'); 
     } catch (error) {
       console.error('Error signing up user:', error);
